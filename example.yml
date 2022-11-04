@@ -1,0 +1,22 @@
+---
+- name: sample book
+  # note: your 'hosts' section will likely be different as this is a group I created for my Red Hat hosts in Ansible Tower itself.
+  hosts: 192.168.1.202
+  gather_facts: no
+  become: true
+  tasks:
+    - name: install httpd
+      yum:
+        name: httpd
+        state: latest
+      
+    - name: run httpd
+      service:
+              name: httpd
+              state: started
+    
+    - name: create content
+      copy:
+        content: "Congrast on installing ansible"
+        dest: /var/www/html/index.html
+...
