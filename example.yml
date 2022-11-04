@@ -1,7 +1,7 @@
 ---
 - name: sample book
   # note: your 'hosts' section will likely be different as this is a group I created for my Red Hat hosts in Ansible Tower itself.
-  hosts: 192.168.1.202
+  hosts: ansible_client
   gather_facts: no
   become: true
   tasks:
